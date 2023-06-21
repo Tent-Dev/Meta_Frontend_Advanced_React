@@ -92,11 +92,10 @@ function App() {
               placeholder="Password"
               type='password'
               value={password.value}
-              onFocus={() => setPassword((prev) => { return { ...prev, isTouched: true } })}
-              onBlur={() => setPassword((prev) => { return { ...prev, isTouched: false } })}
+              onBlur={() => setPassword((prev) => { return { ...prev, isTouched: true } })}
               onChange={e => { handleChange(setPassword, 'password', e.target.value) }}
             />
-            {!password.isTouched && password?.value?.length < 8 ? (<PasswordErrorMessage/>) : null}
+            {password.isTouched && password?.value?.length < 8 ? (<PasswordErrorMessage/>) : null}
           </div>
           <div className="Field">
             <label>
