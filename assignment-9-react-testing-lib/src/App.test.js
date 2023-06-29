@@ -14,7 +14,8 @@ describe("Feedback Form", () => {
     const inputComment = screen.getByLabelText(/Comments:/, { selector: 'textarea' });
     fireEvent.change(inputComment, {target: {value: comment}});
 
-    const clickSubmit = screen.getByText(/Submit/);
+    // const clickSubmit = screen.getByText(/Submit/);
+    const clickSubmit = screen.getByRole('button');
     fireEvent.click(clickSubmit);
 
     expect(handleSubmit).toHaveBeenCalledWith({
@@ -31,7 +32,8 @@ describe("Feedback Form", () => {
     const inputScore = screen.getByLabelText(/Score:/, {selector: 'input'});
     fireEvent.change(inputScore, {target: {value: score}});
 
-    const clickSubmit = screen.getByText(/Submit/);
+    // const clickSubmit = screen.getByText(/Submit/);
+    const clickSubmit = screen.getByRole('button');
     fireEvent.click(clickSubmit);
 
 
